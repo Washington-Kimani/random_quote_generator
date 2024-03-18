@@ -22,6 +22,7 @@ function App() {
 
   return (
     <>
+    <h1>Random  Quotes Generator</h1>
       <div class="card">
         <div className="quotes">
           <p><small>Quote:</small><br /> {quote}</p>
