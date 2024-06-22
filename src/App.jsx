@@ -8,15 +8,17 @@ function App() {
   const [author, setAuthor] = useState('');
   const [copied, setCopied] = useState(false);
 
-  const getQuote = () =>{
-    axios.get(`https://api.quotable.io/random`)
-    .then(res=>{
-      setAuthor(res.data.author);
-      setQuote(res.data.content);
-      setCopied(false)
-    }).catch(err=>{
-      console.error(err.message);
-    });
+  const getQuote = async () =>{
+    await axios
+      .get(`https://node-quotes-api.onrender.com/api/quote`)
+      .then((res) => {
+        setAuthor(res.data.author);
+        setQuote(res.data.text);
+        setCopied(false);
+      })
+      .catch((err) => {
+        console.error(err.message);
+      });
   }
 
 
