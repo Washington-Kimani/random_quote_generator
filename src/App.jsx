@@ -26,10 +26,10 @@ function App() {
 
   return (
     <>
-      <h1>Random Quotes Generator</h1>
+      <h1 className="text-center text-lg font-bold">Random Quotes Generator</h1>
       <div className="card">
         {loading ? (
-          <p>Loading...</p> // Show loading text while fetching data
+          <span class="loading loading-spinner text-secondary">Loading....</span>
         ) : (
           <>
             <div className="quotes">
